@@ -29,5 +29,11 @@ class HideEyeCameraController: NSObject, AVCaptureAudioDataOutputSampleBufferDel
         self.captureSession = AVCaptureSession();
         self.sessionQueue = dispatch_queue_create("session queue", DISPATCH_QUEUE_SERIAL);
         
+        switch AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) {
+        case AVAuthorizationStatus.Authorized:
+            break
+        case AVAuthorizationStatus.NotDetermined:
+            dispatch_suspend(self.sessionQueue!);
+        }
     }
 }
