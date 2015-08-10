@@ -14,6 +14,7 @@
 		B92FDC371B748E69000B312E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92FDC351B748E69000B312E /* LaunchScreen.xib */; };
 		B92FDC431B748E69000B312E /* CameraLearnSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92FDC421B748E69000B312E /* CameraLearnSwiftTests.swift */; };
 		B9E175471B78437E00FE8DFF /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E175461B78437E00FE8DFF /* CamViewController.swift */; };
+		B9E175491B78833F00FE8DFF /* LAVCamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E175481B78833F00FE8DFF /* LAVCamController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		B92FDC411B748E69000B312E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B92FDC421B748E69000B312E /* CameraLearnSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLearnSwiftTests.swift; sourceTree = "<group>"; };
 		B9E175461B78437E00FE8DFF /* CamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
+		B9E175481B78833F00FE8DFF /* LAVCamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAVCamController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				B92FDC351B748E69000B312E /* LaunchScreen.xib */,
 				B92FDC2A1B748E69000B312E /* Supporting Files */,
 				B9E175461B78437E00FE8DFF /* CamViewController.swift */,
+				B9E175481B78833F00FE8DFF /* LAVCamController.swift */,
 			);
 			path = CameraLearnSwift;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E175491B78833F00FE8DFF /* LAVCamController.swift in Sources */,
 				B9E175471B78437E00FE8DFF /* CamViewController.swift in Sources */,
 				B92FDC2F1B748E69000B312E /* ViewController.swift in Sources */,
 				B92FDC2D1B748E69000B312E /* AppDelegate.swift in Sources */,

@@ -17,6 +17,7 @@ class CamViewController : UIViewController {
     var deviceInput : AVCaptureDeviceInput
     var stillImageOutput : AVCaptureStillImageOutput
     var previewLayer : AVCaptureVideoPreviewLayer
+    var takePicButton : UIButton?
     init(){
         self.captureSession = AVCaptureSession()
         self.captureDevice = CamViewController.backDevice()
@@ -63,7 +64,11 @@ class CamViewController : UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.takePicButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
+        self.takePicButton!.frame = self.makeButtonFrame()
+        takePicButton!.setTitle("Take", forState: UIControlState.Normal)
+        self.takePicButton!.addTarget(self, action: "takePicture", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(self.takePicButton!)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -85,6 +90,12 @@ class CamViewController : UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func makeButtonFrame()->CGRect{
+        var viewFrame = self.view.frame
+        var buttonFrame = CGRectMake(viewFrame.width/2 - 25, 25, 50, 50)
+        return buttonFrame
+    }
+    
     func setupCameraLayer(){
         if (self.captureDevice == nil) {
             return
@@ -97,6 +108,17 @@ class CamViewController : UIViewController {
         self.previewLayer.frame = bounds
         self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspect
         viewLayer.insertSublayer(self.previewLayer, below: viewLayer.sublayers[0] as! CALayer)
+        
+    }
+    
+    func takePicture(){
+        print("Ka cha")
+        var picConnection = self.stillImageOutput.connectionWithMediaType(AVMediaTypeVideo)
+        var picBlock = {(buffer: CMSampleBufferRef!, error: NSError!)->Void in
+            var imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
+            var image = UIImage(data: imageData)
+        }
+        self.stillImageOutput.captureStillImageAsynchronouslyFromConnection(picConnection, completionHandler: picBlock)
         
     }
     

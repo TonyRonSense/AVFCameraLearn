@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        var frame = CGRectMake(0, 100, 320, 320)
+        var camera = LAVCamController(theOwner: self, andViewFrame: frame)
+        self.view.addSubview(camera.previewView!)
         
     }
 
