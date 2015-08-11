@@ -14,8 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         var frame = CGRectMake(0, 100, 320, 320)
-        var camera = LAVCamController(theOwner: self, andViewFrame: frame)
-        self.view.addSubview(camera.previewView!)
+//        var camera = LAVCamController(theOwner: self, andViewFrame: frame)
+        var camera = TRCameraController(owner: self, previewFrame: frame)
+        self.view.addSubview(camera.previewView)
         
     }
 
